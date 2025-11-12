@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>RL.COMPANY AFVAN DIGITAL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .main-header {
+        position: fixed;
+        top: 0;
+        left: 100;
+        width: 100%;
+        z-index: 1030; 
+        background: #23232e;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 4px 24px rgba(255, 215, 0, 0.08);
+        padding: 1.5rem 0 1rem 0;
+      }
+      
+      main {
+        padding-top: 130px; 
+      }
+      
+      body {
+        background-color: #14141c;
+        color: #fff;
+      }
+      .company-name {
+        color: #ffd700;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        text-shadow: 0 0 10px #ffd70055;
+        margin-bottom: 0.5rem;
+      }
+      .navbar-nav .nav-link {
+        color: #ffd700 !important;
+        font-weight: 500;
+        margin: 0 10px;
+        transition: color 0.2s;
+      }
+      .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+        color: #ffd700;
+        text-shadow: 0 0 8px #ffd700;
+      }
+      .hero-section {
+        position: relative;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #23232e;
+        border-radius: 20px;
+        margin-bottom: 2rem;
+        overflow: hidden;
+      }
+      .hero-video {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        opacity: 0.5;
+      }
+      .hero-text {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: #ffd700;
+        text-shadow: 0 0 10px #ffd70055;
+      }
+      .hero-text h1 {
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin: 0.5rem 0;
+      }
+      .products-section {
+        margin: 2rem 0;
+      }
+      .section-title {
+        color: #ffd700;
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        text-shadow: 0 0 10px #ffd70055;
+        font-weight: bold;
+      }
+      .product-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+      }
+      .product-card {
+        background: #23232e;
+        border-radius: 20px;
+        box-shadow: 0 4px 24px rgba(255, 215, 0, 0.08);
+        padding: 1.5rem 1rem;
+        width: 220px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+        border: 2px solid transparent;
+      }
+      .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(255, 215, 0, 0.5);
+        border: 2px solid #ffd700;
+      }
+      .product-image {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+        transition: transform 0.3s, filter 0.3s;
+      }
+      .product-card:hover .product-image {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 10px #ffd700);
+      }
+      .product-name {
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 0.5rem;
+        color: #fff;
+        transition: color 0.3s, text-shadow 0.3s;
+      }
+      .product-card:hover .product-name {
+        color: #ffd700;
+        text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+      }
+      .product-description {
+        font-size: 14px;
+        color: #ccc;
+        margin-bottom: 0.5rem;
+      }
+      .product-gain {
+        font-weight: bold;
+        color: #28a745;
+        margin-bottom: 1rem;
+      }
+      .product-gain.negative {
+        color: #ffc107;
+      }
+      .product-button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #ffd700;
+        color: #23232e;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: background 0.2s, color 0.2s;
+      }
+      .product-button:hover {
+        background-color: #fff;
+        color: #23232e;
+      }
+      .about-section, .chart-section, .closing-section {
+        background: #14141c;
+        border-radius: 20px;
+        margin: 2rem 0;
+        padding: 2rem;
+        box-shadow: 0 4px 24px rgba(255, 215, 0, 0.08);
+      }
+      .main-footer, .closing-section p {
+        text-align: center;
+        padding: 1rem;
+        background-color: #14141c;
+        color: #ffd700;
+        margin-top: 2rem;
+        border-radius: 0 0 20px 20px;
+      }
+      @media (max-width: 768px) {
+        main {
+            padding-top: 110px;
+        }
+        .product-grid {
+          flex-direction: column;
+          align-items: center;
+        }
+        .hero-section {
+          height: 40vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+<header class="main-header">
+  <div class="container">
+    <div class="company-name mb-2">RL.COMPANY AFVAN DIGITAL</div>
+    <nav class="navbar navbar-expand-lg navbar-dark justify-content-center" style="background:transparent;">
+      <div class="container-fluid justify-content-center">
+        <ul class="navbar-nav mx-auto" style="font-size:1rem; gap: 0.5rem;">
+          <li class="nav-item"><a href="#home" class="nav-link active">HOME</a></li>
+          <li class="nav-item"><a href="#store" class="nav-link">STORE</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">ABOUT US</a></li>
+          <li class="nav-item"><a href="login.html" class="nav-link">LOGIN</a></li>
+          <li class="nav-item"><a href="table.html" class="nav-link">RIWAYAT</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+    <main>
+      <section id="home" class="hero-section mb-4">
+        <video autoplay muted loop playsinline class="hero-video">
+          <source src="mixkit-banknotes-falling-on-a-dark-background-18305-hd-ready.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-text">
+          <h1>MEWUJUDKAN IMPIAN MENJADI MILIARDER</h1>
+          <h1>DENGAN PRODUK DIGITAL</h1>
+        </div>
+      </section>
+      <section id="store" class="products-section">
+        <h2 class="section-title">PRODUK KAMI</h2>
+        <div class="product-grid">
+          <article class="product-card">
+            <a href="buy.html">
+              <img src="image 2.png" alt="Bitcoin logo" class="product-image" />
+            </a>
+            <h3 class="product-name">BITCOIN</h3>
+            <p class="product-description">KUNTUNGAN YG DI DAPAT<br />DARI HASIL PEMBELIAN DI ANTARA</p>
+            <p class="product-gain">+12.5%</p>
+            <a href="buy.html" class="product-button">Beli Sekarang</a>
+          </article>
+          <article class="product-card">
+            <a href="buy.html">
+              <img src="Rectangle-removebg-preview.png" alt="Ethereum logo" class="product-image" />
+            </a>
+            <h3 class="product-name">ETH</h3>
+            <p class="product-description">KUNTUNGAN YG DI DAPAT<br />DARI HASIL PEMBELIAN DI ANTARA</p>
+            <p class="product-gain">+9.8%</p>
+            <a href="buy.html" class="product-button">Beli Sekarang</a>
+          </article>
+          <article class="product-card">
+            <a href="buy.html">
+              <img src="image_4-removebg-preview.png" alt="Dogecoin logo" class="product-image" />
+            </a>
+            <h3 class="product-name">DODGECOIN</h3>
+            <p class="product-description">KUNTUNGAN YG DI DAPAT<br />DARI HASIL PEMBELIAN DI ANTARA</p>
+            <p class="product-gain">+5.3%</p>
+            <a href="buy.html" class="product-button">Beli Sekarang</a>
+          </article>
+          <article class="product-card">
+            <a href="buy.html">
+              <img src="image_5-removebg-preview.png" alt="Tron logo" class="product-image" />
+            </a>
+            <h3 class="product-name">TRON</h3>
+            <p class="product-description">KUNTUNGAN YG DI DAPAT<br />DARI HASIL PEMBELIAN DI ANTARA</p>
+            <p class="product-gain negative">+3.1%</p>
+            <a href="buy.html" class="product-button">Beli Sekarang</a>
+          </article>
+        </div>
+      </section>
+      <section id="chart" class="chart-section">
+        <div class="chart-container">
+          <div class="chart-axis">
+            <div class="y-axis">
+              <span>100</span>
+              <span>80</span>
+              <span>60</span>
+              <span>40</span>
+              <span>20</span>
+              <span>0</span>
+            </div>
+            <div class="chart-grid">
+              <img src="Chart&Axis.png" alt="Chart" class="chart-image" />
+            </div>
+          </div>
+          <div class="x-axis">
+            <span>Figma</span>
+            <span>Sketch</span>
+            <span>XD</span>
+            <span>PS</span>
+            <span>AI</span>
+            <span>CorelDRAW</span>
+            <span>InDesign</span>
+            <span>Canva</span>
+            <span>Webflow</span>
+            <span>Affinity</span>
+            <span>Marker</span>
+            <span>Figma</span>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <div class="legend-item">
+            <span class="legend-color" style="background-color: #8979ff"></span>
+            <span class="legend-label">2020</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color" style="background-color: #ff928a"></span>
+            <span class="legend-label">2021</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color" style="background-color: #3bc3de"></span>
+            <span class="legend-label">2022</span>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="about-section">
+        <h2 class="section-title">ABOUT US</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Kami adalah platform visual yang menyajikan informasi terkini seputar aset kripto dengan tampilan yang
+              modern, interaktif, dan mudah dipahami.
+            </p>
+            <p>
+              Fokus utama kami adalah membantu pengguna memantau tren pasar mata uang digital seperti Bitcoin, Ethereum,
+              Dogecoin, dan Tron, lengkap dengan grafik pergerakan, persentase keuntungan, serta analisis tren harian.
+            </p>
+            <p>
+              Dengan menggabungkan desain intuitif dan data yang akurat, kami ingin memberikan pengalaman terbaik bagi
+              pengguna dalam mengambil keputusan investasi. Kami percaya bahwa akses informasi yang cepat dan jelas
+              merupakan kunci dalam dunia kripto yang terus bergerak dinamis.
+            </p>
+            <p>
+              Bergabunglah bersama kami untuk terus mengikuti perkembangan dunia aset digital secara real-time, visual,
+              dan efisien.
+            </p>
+          </div>
+          <img src="image 6.png" alt="Cryptocurrency illustration" class="about-image" />
+        </div>
+      </section>
+      <section class="closing-section">
+        <p>
+          Dengan hadirnya platform ini, kami berharap dapat menjadi jembatan bagi siapa saja yang ingin memahami dunia
+          kripto dengan lebih mudah dan menyenangkan.
+        </p>
+        <p>
+          Teruslah pantau pergerakan pasar, ambil keputusan dengan bijak, dan jadilah bagian dari masa depan digital
+          bersama kami.
+        </p>
+        <p>Terima kasih telah mempercayai kami sebagai sumber informasi kripto Anda.</p>
+        <p>Designed by <a href="about.html" class="designer-link"></a></p>
+        <p>&copy; 2025 RL.COMPANY AFVAN DIGITAL. All rights reserved.</p>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+          if (this.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              const headerHeight = 130; 
+              const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
+              
+              window.scrollTo({
+                top: targetPosition, 
+                behavior: 'smooth' 
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
